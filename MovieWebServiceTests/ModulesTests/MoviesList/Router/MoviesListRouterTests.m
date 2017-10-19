@@ -19,8 +19,6 @@
 
 @implementation MoviesListRouterTests
 
-#pragma mark - Настройка окружения для тестирования
-
 - (void)setUp {
     [super setUp];
 

@@ -27,7 +27,6 @@
 
 @implementation MoviesListPresenterTests
 
-#pragma mark - Настройка окружения для тестирования
 
 - (void)setUp {
     [super setUp];
@@ -53,9 +52,6 @@
     [super tearDown];
 }
 
-#pragma mark - Тестирование методов MoviesListModuleInput
-
-#pragma mark - Тестирование методов MoviesListViewOutput
 
 - (void)testThatPresenterHandlesViewReadyEvent {
     // given
@@ -67,7 +63,5 @@
     // then
     OCMVerify([self.mockView setupInitialState]);
 }
-
-#pragma mark - Тестирование методов MoviesListInteractorOutput
 
 @end

@@ -23,8 +23,6 @@
 
 @implementation MoviesListViewControllerTests
 
-#pragma mark - Настройка окружения для тестирования
-
 - (void)setUp {
     [super setUp];
 
@@ -42,8 +40,6 @@
 
     [super tearDown];
 }
-
-#pragma mark - Тестирование жизненного цикла
 
 - (void)testThatControllerNotifiesPresenterOnDidLoad {
 	// given

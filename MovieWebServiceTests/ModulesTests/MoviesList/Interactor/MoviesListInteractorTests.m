@@ -23,8 +23,6 @@
 
 @implementation MoviesListInteractorTests
 
-#pragma mark - Настройка окружения для тестирования
-
 - (void)setUp {
     [super setUp];
 
@@ -42,7 +40,5 @@
 
     [super tearDown];
 }
-
-#pragma mark - Тестирование методов MoviesListInteractorInput
 
 @end
