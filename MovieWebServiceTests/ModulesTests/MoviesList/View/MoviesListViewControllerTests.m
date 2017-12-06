@@ -51,8 +51,4 @@
 	OCMVerify([self.mockOutput didTriggerViewReadyEvent]);
 }
 
-#pragma mark - Тестирование методов интерфейса
-
-#pragma mark - Тестирование методов MoviesListViewInput
-
 @end

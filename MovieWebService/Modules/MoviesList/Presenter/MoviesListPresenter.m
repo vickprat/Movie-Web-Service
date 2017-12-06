@@ -16,12 +16,8 @@
     NSArray *films;
 }
 
-#pragma mark - Методы MoviesListModuleInput
-
 - (void)configureModule {
  }
-
-#pragma mark - Методы MoviesListViewOutput
 
 - (void)didTriggerViewReadyEvent {
 	[self.view setupInitialState];
@@ -35,7 +31,5 @@
     films = [NSArray arrayWithObject:film];
     [self.interactor setData:films];
 }
-
-#pragma mark - Методы MoviesListInteractorOutput
 
 @end
