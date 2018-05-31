@@ -10,30 +10,28 @@
 #import "Actor.h"
 #import "Director.h"
 
-typedef enum {
-    G = 0,
-    PG,
-    PG13,
-    R,
-    NC17
-} FilmRating;
+typedef NS_ENUM(NSUInteger, FilmRating) {
+  G = 0,
+  PG,
+  PG13,
+  R,
+  NC17
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Film : NSObject {
-    BOOL *nominated;
-}
+@interface Film : NSObject
 
-@property (nonatomic) FilmRating filmRating;
-@property (weak, nonatomic) NSArray *languages;
-@property (weak, nonatomic) NSDate *releaseDate;
-@property (weak, nonatomic) NSArray<Actor*> *cast;
+@property (nonatomic, readonly) FilmRating filmRating;
+@property (nonatomic, readonly) NSArray *languages;
+@property (nonatomic, readonly) NSDate *releaseDate;
+@property (nonatomic, readonly) NSArray <Actor*> *cast;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) double rating;
+@property (nonatomic, readonly) Director *director;
+@property (nonatomic, readonly, getter=isNominated) BOOL nominated;
 
-- (id)initWithData:(NSDictionary *)data;
-
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic) double rating;
-@property (nonatomic, strong) Director *director;
+- (instancetype)initWithData:(NSDictionary *)data;
 
 @end
 
