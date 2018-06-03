@@ -48,7 +48,7 @@
 	[self.controller viewDidLoad];
 
 	// then
-	OCMVerify([self.mockOutput didTriggerViewReadyEvent]);
+	OCMVerify([self.mockOutput viewIsReady]);
 }
 
 @end

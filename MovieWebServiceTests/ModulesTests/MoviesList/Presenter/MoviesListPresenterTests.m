@@ -58,10 +58,10 @@
 
 
     // when
-    [self.presenter didTriggerViewReadyEvent];
+    [self.presenter viewIsReady];
 
     // then
-    OCMVerify([self.mockView setupInitialState]);
+    OCMVerify([self.mockInteractor fetchMoviesList]);
 }
 
 @end

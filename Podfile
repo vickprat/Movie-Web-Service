@@ -10,6 +10,7 @@ target ‘MovieWebService’ do
 
   target ‘MovieWebServiceTests' do
     inherit! :search_paths
+    pod 'OCMock', '~> 3.4.1'
     # Pods for testing
   end
 
