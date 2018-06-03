@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) FilmRating filmRating;
 @property (nonatomic, readonly) NSArray *languages;
 @property (nonatomic, readonly) NSDate *releaseDate;
-@property (nonatomic, readonly, nullable) NSArray <Actor*> *cast;
+@property (nonatomic, readonly) NSArray <Actor*> *cast;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) double rating;
 @property (nonatomic, readonly) Director *director;

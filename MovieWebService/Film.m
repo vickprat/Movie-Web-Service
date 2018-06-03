@@ -24,7 +24,7 @@
         _director = [[Director alloc] initWithData:data[@"director"]];
         _director.film = self;
         NSMutableArray *castsList = [[NSMutableArray alloc] init];
-        NSArray *castsData = data[@"casts"];
+        NSArray *castsData = data[@"cast"];
         for (NSDictionary *castData in castsData) {
             Actor *actor = [[Actor alloc] initWithData:castData];
             actor.film = self;
