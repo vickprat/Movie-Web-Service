@@ -30,6 +30,7 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
     
     func setupView() {
         view = UIView()
+        self.title = "Movie Details";
         view.backgroundColor = .white
         
         directorName = UILabel()
