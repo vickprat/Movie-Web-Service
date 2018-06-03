@@ -30,7 +30,7 @@
       break;
   }
   self.filmRating.text = filmRatingText;
-  self.rating.text = [[NSNumber numberWithInteger:film.rating] stringValue];
+  self.rating.text = [[NSNumber numberWithDouble:film.rating] stringValue];
 }
 
 @end
