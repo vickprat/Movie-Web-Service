@@ -28,10 +28,11 @@ static NSString *CellIdentifier = @"MovieListTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.output fetchMovies];
+    [self setupView];
+    [self.output viewIsReady];
 }
 
-- (void)setupInitialState {
+- (void)setupView {
     self.navigationItem.title = @"Movies List";
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupTableView];

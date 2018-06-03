@@ -11,7 +11,7 @@
 
 @protocol MoviesListViewOutput <NSObject>
 
-- (void)fetchMovies;
+- (void)viewIsReady;
 
 - (void)didSelectMovie:(Film *)film;
 

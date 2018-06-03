@@ -13,17 +13,10 @@
 #import "MoviesListRouterInput.h"
 #import "Film.h"
 
-@interface MoviesListPresenter()
-
-@property (nonatomic) NSArray *movies;
-
-@end
-
 @implementation MoviesListPresenter
 
-- (void)fetchMovies {
+- (void)viewIsReady {
   [self.interactor fetchMoviesList];
-  [self.view setupInitialState];
 }
 
 - (void)didSelectMovie:(Film *)film {
@@ -31,9 +24,8 @@
 }
 
 - (void)fetchedMovies:(NSArray *)movies {
-  self.movies = movies;
   dispatch_async(dispatch_get_main_queue(), ^{
-    [self.view showMoviesList:self.movies];
+    [self.view showMoviesList:movies];
   });
 }
 
