@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class Film;
+
 @protocol MoviesListRouterInput <NSObject>
+
+- (void)loadDetailsForFilm:(Film *)film;
 
 @end

@@ -8,12 +8,17 @@
 
 #import "MoviesListViewController.h"
 #import "MoviesListViewOutput.h"
-#import "AppDelegate.h"
+#import "MoviesListViewInput.h"
 #import "Film.h"
+#import "Masonry.h"
+#import "MovieListTableViewCell.h"
 
-@interface MoviesListViewController()
+static NSString *CellIdentifier = @"MovieListTableViewCell";
 
+@interface MoviesListViewController() <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic) UITableView *tableView;
+@property (nonatomic) NSArray *movies;
 
 @end
 
@@ -23,24 +28,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.output didTriggerViewReadyEvent];
-    [self.output setViewForSetup:self.view];
+    [self.output fetchMovies];
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate getFilmWithCallback:^(Film *film) {
-        [self.output setData:film];
-    }];
-    
-}
-
-#pragma mark - MoviesListViewInput
 
 - (void)setupInitialState {
     self.navigationItem.title = @"Movies List";
     self.view.backgroundColor = [UIColor whiteColor];
+    [self setupTableView];
+}
+
+- (void)setupTableView {
+    self.tableView = [UITableView new];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.right.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view);
+    }];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([MovieListTableViewCell class])
+                                bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+}
+
+#pragma mark - MoviesListViewInput
+
+- (void)showMoviesList:(NSArray *)movies {
+    self.movies = movies;
+    [self.tableView reloadData];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.movies.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MovieListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Film *film = self.movies[indexPath.row];
+    [cell setupForFilm:film];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Film *film = self.movies[indexPath.row];
+    [self.output didSelectMovie:film];
 }
 
 @end

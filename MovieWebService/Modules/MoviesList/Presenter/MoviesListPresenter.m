@@ -7,29 +7,34 @@
 //
 
 #import "MoviesListPresenter.h"
-
 #import "MoviesListViewInput.h"
+#import "MoviesListInteractorOutput.h"
 #import "MoviesListInteractorInput.h"
 #import "MoviesListRouterInput.h"
+#import "Film.h"
 
-@implementation MoviesListPresenter {
-    NSArray *films;
+@interface MoviesListPresenter()
+
+@property (nonatomic) NSArray *movies;
+
+@end
+
+@implementation MoviesListPresenter
+
+- (void)fetchMovies {
+  [self.interactor fetchMoviesList];
+  [self.view setupInitialState];
 }
 
-- (void)configureModule {
- }
-
-- (void)didTriggerViewReadyEvent {
-	[self.view setupInitialState];
+- (void)didSelectMovie:(Film *)film {
+  [self.router loadDetailsForFilm:film];
 }
 
-- (void)setViewForSetup:(UIView *)view {
-    [self.interactor setViewForSetup:view];
-}
-
-- (void)setData:(Film *)film {
-    films = [NSArray arrayWithObject:film];
-    [self.interactor setData:films];
+- (void)fetchedMovies:(NSArray *)movies {
+  self.movies = movies;
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self.view showMoviesList:self.movies];
+  });
 }
 
 @end

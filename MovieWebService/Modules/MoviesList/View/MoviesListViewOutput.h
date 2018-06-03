@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "Film.h"
 
 @protocol MoviesListViewOutput <NSObject>
 
-- (void)didTriggerViewReadyEvent;
-- (void)setViewForSetup:(UIView *)view;
-- (void)setData:(Film *)film;
+- (void)fetchMovies;
+
+- (void)didSelectMovie:(Film *)film;
 
 @end
