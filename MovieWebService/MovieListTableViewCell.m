@@ -14,7 +14,7 @@
 - (void)setupForFilm:(Film *)film {
   self.name.text = film.name;
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-  formatter.dateFormat = @"yyyy-MM-dd";
+  [formatter setDateStyle:NSDateFormatterMediumStyle];
   self.date.text = [formatter stringFromDate:film.releaseDate];
   NSString *filmRatingText;
   switch (film.filmRating) {
