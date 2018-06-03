@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MoviesListBuilder: NSObject
+
 - (UIViewController *)build;
 
 @end

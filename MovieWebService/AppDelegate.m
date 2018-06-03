@@ -18,13 +18,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    MoviesListBuilder *firstBuilder = [MoviesListBuilder new];
-    UIViewController *viewController = [firstBuilder build];
-    self.navigationController = [UINavigationController new];
-    self.navigationController.viewControllers =[NSArray arrayWithObject: viewController];
-    self.window.rootViewController = self.navigationController;
+    MoviesListBuilder *moviesListBuilder = [MoviesListBuilder new];
+    self.window.rootViewController = [moviesListBuilder build];
     [self.window makeKeyAndVisible];
-
     return YES;
 }
 

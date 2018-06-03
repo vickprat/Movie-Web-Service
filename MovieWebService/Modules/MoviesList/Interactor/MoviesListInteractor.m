@@ -89,7 +89,7 @@
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     Film *film = [films objectAtIndex:indexPath.row];
     DetailsModuleBuilder *builder = [DetailsModuleBuilder new];
-    [appDelegate.navigationController pushViewController:[builder buildWith:film] animated:YES];
+    //[appDelegate.navigationController pushViewController:[builder buildWith:film] animated:YES];
 }
 
 @end

@@ -7,18 +7,23 @@
 //
 
 #import "MoviesListViewController.h"
-
 #import "MoviesListViewOutput.h"
 #import "AppDelegate.h"
 #import "Film.h"
+
+@interface MoviesListViewController()
+
+
+
+@end
 
 @implementation MoviesListViewController
 
 #pragma mark - Life cycle
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-
+    [super viewDidLoad];
+    
     [self.output didTriggerViewReadyEvent];
     [self.output setViewForSetup:self.view];
 }
@@ -28,13 +33,13 @@
     [appDelegate getFilmWithCallback:^(Film *film) {
         [self.output setData:film];
     }];
-
+    
 }
 
 #pragma mark - MoviesListViewInput
 
 - (void)setupInitialState {
-    self.navigationItem.title = @"RootViewController";
+    self.navigationItem.title = @"Movies List";
     self.view.backgroundColor = [UIColor whiteColor];
 }
 

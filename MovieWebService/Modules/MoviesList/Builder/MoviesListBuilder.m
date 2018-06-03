@@ -7,7 +7,6 @@
 //
 
 #import "MoviesListBuilder.h"
-
 #import "MoviesListViewController.h"
 #import "MoviesListInteractor.h"
 #import "MoviesListPresenter.h"
@@ -16,7 +15,6 @@
 @implementation MoviesListBuilder
 
 - (UIViewController *)build {
-    
     MoviesListViewController *viewController = [MoviesListViewController new];
 
     MoviesListRouter *router = [MoviesListRouter new];
@@ -30,9 +28,11 @@
     interactor.output = presenter;
     presenter.interactor = interactor;
     viewController.output = presenter;
-    
-    return viewController;
 
+    UINavigationController *navigationController = [UINavigationController new];
+    navigationController.viewControllers = @[viewController];
+
+    return navigationController;
 }
 
 @end
