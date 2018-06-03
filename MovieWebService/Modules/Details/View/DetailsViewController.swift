@@ -11,11 +11,10 @@ import UIKit
 class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDelegate {
 
     var output: DetailsViewOutput!
-    public var director: Director!
 
     var directorName: UILabel!
     var directorNameValue: UILabel!
-    var tapToShowMore: TappableLabel!
+    var showMore: TappableLabel!
     var actorName: UILabel!
     var actorNameValue: UILabel!
     var actorScreenName: UILabel!
@@ -25,62 +24,65 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupView();
         output.viewIsReady()
+    }
+    
+    func setupView() {
         view = UIView()
         view.backgroundColor = .white
-
+        
         directorName = UILabel()
         view.addSubview(directorName)
         directorName.frame = CGRect(x: 20, y: 100, width: 200, height: 30)
         directorName.text = "Director Name"
-
+        
         directorNameValue = UILabel()
         view.addSubview(directorNameValue)
         directorNameValue.frame = CGRect(x: 20, y: 130, width: 200, height: 30)
-        directorNameValue.text = director.name;
-
-        tapToShowMore = TappableLabel()
-        view.addSubview(tapToShowMore)
-        tapToShowMore.frame = CGRect(x: 20, y: 180, width: 200, height: 30)
-        tapToShowMore.text = "Tap here to show more"
-        tapToShowMore.delegate = self
-
+        
+        showMore = TappableLabel()
+        view.addSubview(showMore)
+        showMore.frame = CGRect(x: 20, y: 180, width: 200, height: 30)
+        showMore.text = "Tap here to show more"
+        showMore.delegate = self
+        
         actorName = UILabel()
         view.addSubview(actorName)
         actorName.frame = CGRect(x: 20, y: 180, width: 200, height: 30)
         actorName.text = "Actor Name"
-        actorName.isHidden = true
         
         actorNameValue = UILabel()
         view.addSubview(actorNameValue)
         actorNameValue.frame = CGRect(x: 20, y: 210, width: 200, height: 30)
-        actorNameValue.isHidden = true
         
         actorScreenName = UILabel()
         view.addSubview(actorScreenName)
         actorScreenName.frame = CGRect(x: 20, y: 240, width: 200, height: 30)
         actorScreenName.text = "Actor Screen Name"
-        actorScreenName.isHidden = true
         
         actorScreenNameValue = UILabel()
         view.addSubview(actorScreenNameValue)
         actorScreenNameValue.frame = CGRect(x: 20, y: 270, width: 200, height: 30)
-        actorScreenNameValue.isHidden = true
-        
-        let actor: Actor = director.film.cast[0];
-        actorNameValue.text = actor.name;
-        actorScreenNameValue.text = actor.screenName;
     }
 
-
     // MARK: DetailsViewInput
-
+    func fillData(with directorName: String, actorName: String, actorScreenName: String) {
+        directorNameValue.text = directorName
+        actorNameValue.text = actorName
+        actorScreenNameValue.text = actorScreenName;
+    }
+    
+    func showMore(isHidden: Bool) {
+        showMore.isHidden = isHidden;
+        actorName.isHidden = !isHidden
+        actorScreenName.isHidden = !isHidden
+        actorNameValue.isHidden = !isHidden
+        actorScreenNameValue.isHidden = !isHidden
+    }
+    
     func didReceiveTouch() {
-        actorName.isHidden = false
-        actorScreenName.isHidden = false
-        actorNameValue.isHidden = false
-        actorScreenNameValue.isHidden = false
-        tapToShowMore.removeFromSuperview();
+        self.output.showMoreTapped();
     }
 
 }

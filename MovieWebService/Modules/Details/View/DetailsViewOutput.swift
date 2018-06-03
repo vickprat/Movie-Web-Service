@@ -6,8 +6,8 @@
 //  Copyright © 2017 Agoda Services Co. Ltd. All rights reserved.
 //
 
-protocol DetailsViewOutput {
-
+protocol DetailsViewOutput: class {
     func viewIsReady()
 
+    func showMoreTapped()
 }

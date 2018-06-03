@@ -8,10 +8,11 @@
 
 class DetailsInteractor: DetailsInteractorInput {
 
+    public var film: Film!
     weak var output: DetailsInteractorOutput!
 
     // MARK: - DetailsInteractorInput
-    
-    
-    
+    func getData() {
+      self.output.setDirector(with: film.director)
+    }
 }

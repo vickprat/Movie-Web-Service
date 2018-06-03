@@ -7,5 +7,9 @@
 //
 
 protocol DetailsViewInput: class {
-
+  
+  func fillData(with directorName: String, actorName: String, actorScreenName: String)
+  
+  func showMore(isHidden: Bool);
+  
 }

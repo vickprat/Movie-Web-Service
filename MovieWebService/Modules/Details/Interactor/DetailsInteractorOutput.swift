@@ -7,5 +7,7 @@
 //
 
 protocol DetailsInteractorOutput: class {
+  
+  func setDirector(with director: Director);
 
 }
