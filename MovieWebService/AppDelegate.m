@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "MoviesListBuilder.h"
+#import "RootRouter.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    MoviesListBuilder *moviesListBuilder = [MoviesListBuilder new];
-    self.window.rootViewController = [moviesListBuilder build];
+    RootRouter *rootRouter = [RootRouter new];
+    self.window.rootViewController = [rootRouter rootViewController];
     [self.window makeKeyAndVisible];
     return YES;
 }
