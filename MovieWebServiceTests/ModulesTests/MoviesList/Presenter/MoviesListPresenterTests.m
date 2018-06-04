@@ -8,12 +8,11 @@
 
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-
 #import "MoviesListPresenter.h"
-
 #import "MoviesListViewInput.h"
 #import "MoviesListInteractorInput.h"
 #import "MoviesListRouterInput.h"
+#import "Film.h"
 
 @interface MoviesListPresenterTests : XCTestCase
 
@@ -61,7 +60,19 @@
     [self.presenter viewIsReady];
 
     // then
-    OCMVerify([self.mockInteractor fetchMoviesList]);
+    OCMVerify([self.mockInteractor fetchFilmsList]);
+}
+
+- (void)testThatPresenterHandlesFilmsData {
+  //given
+  Film *film = [[Film alloc] initWithData:@{}];
+  NSArray *films = @[film];
+  
+  // when
+  [self.presenter fetchedFilms:films];
+  
+  // then
+  OCMVerify([self.mockView showFilmsList]);
 }
 
 @end
