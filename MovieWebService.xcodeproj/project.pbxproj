@@ -91,8 +91,8 @@
 		5423BA8B20C00E100089FA58 /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Screenshots; path = MovieWebService/Screenshots; sourceTree = SOURCE_ROOT; };
 		54B7FA0E20C55F370070D467 /* MovieWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieWebService.h; sourceTree = "<group>"; };
 		54B7FA0F20C55F370070D467 /* MovieWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieWebService.m; sourceTree = "<group>"; };
-		54B7FA1220C583FB0070D467 /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootRouter.h; path = MovieWebService/RootRouter.h; sourceTree = SOURCE_ROOT; };
-		54B7FA1320C583FB0070D467 /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootRouter.m; path = MovieWebService/RootRouter.m; sourceTree = SOURCE_ROOT; };
+		54B7FA1220C583FB0070D467 /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootRouter.h; path = "MovieWebService/Modules/New Group/RootRouter.h"; sourceTree = SOURCE_ROOT; };
+		54B7FA1320C583FB0070D467 /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootRouter.m; path = "MovieWebService/Modules/New Group/RootRouter.m"; sourceTree = SOURCE_ROOT; };
 		54B7FA1520C58C7A0070D467 /* MovieListTableViewCellInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieListTableViewCellInput.h; sourceTree = "<group>"; };
 		54B7FA1720C598B40070D467 /* MoviesListModuleBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesListModuleBuilderTests.m; sourceTree = "<group>"; };
 		570604DAB816B8F590CE6A19 /* Pods_MovieWebServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWebServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +182,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4AA6A920C5D1F700197D1C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				54B7FA1220C583FB0070D467 /* RootRouter.h */,
+				54B7FA1320C583FB0070D467 /* RootRouter.m */,
+			);
+			name = Root;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		1939A4DF7787DD57DF0CAA34 /* MoviesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,16 +279,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		54B7FA1120C583DA0070D467 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				54B7FA1220C583FB0070D467 /* RootRouter.h */,
-				54B7FA1320C583FB0070D467 /* RootRouter.m */,
-			);
-			name = Root;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		54B7FA1620C5987A0070D467 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +300,7 @@
 		578A72838BE61473B4DFA550 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				54B7FA1120C583DA0070D467 /* Root */,
+				0A4AA6A920C5D1F700197D1C /* Root */,
 				7CC08BD7D2E111BC41031D83 /* MoviesList */,
 				234438248B3AC7425AAD32D6 /* Details */,
 			);
