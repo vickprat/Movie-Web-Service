@@ -9,7 +9,6 @@
 #import "MoviesListViewController.h"
 #import "MoviesListViewOutput.h"
 #import "MoviesListViewInput.h"
-#import "Film.h"
 #import "Masonry.h"
 #import "MovieListTableViewCell.h"
 
@@ -18,7 +17,6 @@ static NSString *CellIdentifier = @"MovieListTableViewCell";
 @interface MoviesListViewController() <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) UITableView *tableView;
-@property (nonatomic) NSArray *movies;
 
 @end
 
@@ -56,15 +54,16 @@ static NSString *CellIdentifier = @"MovieListTableViewCell";
 
 #pragma mark - MoviesListViewInput
 
-- (void)showMoviesList:(NSArray *)movies {
-    self.movies = movies;
-    [self.tableView reloadData];
+- (void)showFilmsList {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
+    return [self.output numberOfFilms];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
