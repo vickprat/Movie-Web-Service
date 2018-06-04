@@ -33,24 +33,27 @@ class DetailsViewTests: XCTestCase {
     }
 
     func testIfViewIsReady() {
-        //given
-        let mock = MockOutput()
-
-        //when 
-        mock.viewIsReady()
-
-        //then
-        XCTAssertTrue(mock.viewIsReadyDidCall)
+        viewController.viewDidLoad()
+        XCTAssertTrue(output.viewIsReadyDidCall)
+    }
+  
+    func testIfTappableLabelClicked() {
+      viewController.didReceiveTouch()
+      XCTAssertTrue(output.labelTapped)
     }
 
     // MARK: - Mock
 
     class MockOutput: DetailsViewOutput {
         var viewIsReadyDidCall: Bool = false
+        var labelTapped: Bool = false
 
         func viewIsReady() {
             viewIsReadyDidCall = true
         }
-		
+      
+        func showMoreTapped() {
+            labelTapped = true
+        }
     }
 }

@@ -13,7 +13,7 @@ import MovieWebService
 
 class DetailsModuleBuilderTests: XCTestCase {
 
-    func testBuildViewController() {
+    func testDetailsModuleBuilder() {
 
         // given
         let builder = DetailsModuleBuilder()
@@ -27,11 +27,15 @@ class DetailsModuleBuilderTests: XCTestCase {
 
         let presenter: DetailsPresenter = viewController.output as! DetailsPresenter
         XCTAssertNotNil(presenter.view)
+        XCTAssertTrue(presenter.view is DetailsViewController)
         XCTAssertNotNil(presenter.router)
         XCTAssertTrue(presenter.router is DetailsRouter)
+        XCTAssertNotNil(presenter.interactor)
+        XCTAssertTrue(presenter.interactor is DetailsInteractor)
 
         let interactor: DetailsInteractor = presenter.interactor as! DetailsInteractor
         XCTAssertNotNil(interactor.output)
+        XCTAssertTrue(interactor.output is DetailsPresenter)
 
         let router: DetailsRouter = presenter.router as! DetailsRouter
         XCTAssertNotNil(router.viewController)

@@ -23,6 +23,7 @@ class DetailsInteractorTests: XCTestCase {
        
         interactor = DetailsInteractor()
         interactor.output = output
+        interactor.film = Film()
     }
 
     override func tearDown() {
@@ -31,11 +32,23 @@ class DetailsInteractorTests: XCTestCase {
 	
         super.tearDown()
     }
+  
+    func testIfSetDirectorDidCall() {
+        interactor.getData()
+        XCTAssertTrue(output.setDirectorDidCall)
+    }
 
     // MARK: - Mock
 
     class MockOutput: DetailsInteractorOutput {
-
+      var setDirectorDidCall: Bool = false
+      var setActorDidCall: Bool = false
+      func setDirector(with director: Director) {
+        setDirectorDidCall = true
+      }
+      func setActor(with actor: Actor?) {
+        setActorDidCall = true;
+      }
     }
 
 }
