@@ -68,10 +68,14 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
     }
 
     // MARK: DetailsViewInput
-    func fillData(with directorName: String, actorName: String, actorScreenName: String) {
+    func fillData(with directorName: String, actorName: String?, actorScreenName: String?) {
         directorNameValue.text = directorName
-        actorNameValue.text = actorName
-        actorScreenNameValue.text = actorScreenName;
+        if let actorName = actorName {
+            actorNameValue.text = actorName
+            actorScreenNameValue.text = actorScreenName;
+        } else {
+            showMore.isHidden = true
+        }
     }
     
     func showMore(isHidden: Bool) {

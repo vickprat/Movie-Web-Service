@@ -30,7 +30,7 @@
             actor.film = self;
             [castsList addObject:actor];
         }
-        _cast = castsList;
+        _cast = castsList.count > 0 ? castsList : nil;
     }
     return self;
 }
