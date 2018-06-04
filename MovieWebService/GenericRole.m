@@ -14,6 +14,9 @@
                    biography:(NSString *)biography
                  dateOfBirth:(NSDate *)dateOfBirth
                  isNominated:(BOOL)isNominated {
+  NSParameterAssert(name);
+  NSParameterAssert(biography);
+  NSParameterAssert(dateOfBirth);
     if (self) {
       _name = name;
       _biography = biography;

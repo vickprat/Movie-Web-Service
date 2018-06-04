@@ -20,6 +20,12 @@
                         cast:(nullable NSArray <Actor*> *)cast
                     director:(Director *)director
                  isNominated:(BOOL)isNominated {
+  NSParameterAssert(name);
+  NSParameterAssert(filmRating);
+  NSParameterAssert(languages);
+  NSParameterAssert(releaseDate);
+  NSParameterAssert(rating);
+  NSParameterAssert(director);
   self = [super init];
   if (self) {
     _filmRating = filmRating;

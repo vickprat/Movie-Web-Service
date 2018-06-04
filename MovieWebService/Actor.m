@@ -15,6 +15,7 @@
                    biography:(NSString *)biography
                  dateOfBirth:(NSDate *)dateOfBirth
                  isNominated:(BOOL)isNominated{
+  NSParameterAssert(screenName);
     self = [super initWithName:name
                      biography:biography
                    dateOfBirth:dateOfBirth
