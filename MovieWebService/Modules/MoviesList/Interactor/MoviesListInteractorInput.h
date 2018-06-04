@@ -10,6 +10,6 @@
 
 @protocol MoviesListInteractorInput <NSObject>
 
-- (void)fetchMoviesList;
+- (void)fetchFilmsList;
 
 @end
