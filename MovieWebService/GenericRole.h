@@ -18,6 +18,9 @@
 @property (nonatomic, readonly, getter=isNominated) BOOL nominated;
 @property (nonatomic, weak) Film *film;
 
-- (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithName:(NSString *)name
+                   biography:(NSString *)biography
+                 dateOfBirth:(NSDate *)dateOfBirth
+                 isNominated:(BOOL)isNominated;
 
 @end

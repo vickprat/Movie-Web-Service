@@ -42,15 +42,20 @@ class DetailsPresenterTests: XCTestCase {
     }
   
     func testIfSetupDirectorDidCall() {
-        let data: Dictionary = ["name": "Prateek"]
-        let director: Director = Director.init(data: data)
+        let director: Director = Director.init(name: "Prateek",
+                                               biography: "random",
+                                               dateOfBirth: NSDate.distantPast,
+                                               isNominated: true)
         presenter.setDirector(with: director)
         XCTAssertTrue(view.setupDirectorLabelDidCall)
     }
 
     func testIfSetupActorDidCall() {
-        let data: Dictionary = ["name": "Prateek", "screenName": "Vicky"]
-        let actor: Actor = Actor.init(data: data)
+        let actor: Actor = Actor.init(name: "Prateek",
+                                      screenName: "Vicky" ,
+                                      biography: "random",
+                                      dateOfBirth: NSDate.distantPast,
+                                      isNominated: false)
         presenter.setActor(with: actor)
         XCTAssertTrue(view.setupActorLabelDidCall)
     }

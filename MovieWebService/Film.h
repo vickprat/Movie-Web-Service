@@ -31,7 +31,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) Director *director;
 @property (nonatomic, readonly, getter=isNominated) BOOL nominated;
 
-- (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithName:(NSString *)name
+                  filmRating:(FilmRating)filmRating
+                   languages:(NSArray *)languages
+                 releaseDate:(NSDate *)releaseDate
+                      rating:(double)rating
+                        cast:(nullable NSArray <Actor*> *)cast
+                    director:(Director *)director
+                 isNominated:(BOOL)isNominated;
 
 @end
 

@@ -11,6 +11,9 @@
 
 @interface Director : GenericRole
 
-- (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithName:(NSString *)name
+                   biography:(NSString *)biography
+                 dateOfBirth:(NSDate *)dateOfBirth
+                 isNominated:(BOOL)isNominated;
 
 @end

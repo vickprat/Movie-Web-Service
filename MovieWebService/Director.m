@@ -10,8 +10,14 @@
 
 @implementation Director
 
-- (instancetype)initWithData:(NSDictionary *)data {
-    self = [super initWithData:data];
+- (instancetype)initWithName:(NSString *)name
+                   biography:(NSString *)biography
+                 dateOfBirth:(NSDate *)dateOfBirth
+                 isNominated:(BOOL)isNominated {
+    self = [super initWithName:name
+                     biography:biography
+                   dateOfBirth:dateOfBirth
+                   isNominated:isNominated];
     return self;
 }
 

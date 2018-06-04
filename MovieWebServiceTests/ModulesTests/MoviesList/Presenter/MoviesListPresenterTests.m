@@ -65,7 +65,18 @@
 
 - (void)testThatPresenterHandlesFilmsData {
   //given
-  Film *film = [[Film alloc] initWithData:@{}];
+  Director *director = [[Director alloc] initWithName:@"Prateek"
+                                            biography:@"random"
+                                          dateOfBirth:[NSDate date]
+                                          isNominated:YES];
+  Film *film = [[Film alloc] initWithName:@"Prateek"
+                               filmRating:4
+                                languages:@[@"English"]
+                              releaseDate:[NSDate date]
+                                   rating:2
+                                     cast:nil
+                                 director:director
+                              isNominated:YES];
   NSArray *films = @[film];
   
   // when

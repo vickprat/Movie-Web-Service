@@ -10,10 +10,17 @@
 
 @implementation Actor
 
-- (instancetype)initWithData:(NSDictionary *)data {
-    self = [super initWithData:data];
+- (instancetype)initWithName:(NSString *)name
+                  screenName:(NSString *)screenName
+                   biography:(NSString *)biography
+                 dateOfBirth:(NSDate *)dateOfBirth
+                 isNominated:(BOOL)isNominated{
+    self = [super initWithName:name
+                     biography:biography
+                   dateOfBirth:dateOfBirth
+                   isNominated:isNominated];
     if (self) {
-        _screenName = [data objectForKey:@"screenName"];
+      _screenName = screenName;
     }
     return self;
 }

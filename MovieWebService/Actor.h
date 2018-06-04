@@ -13,6 +13,10 @@
 
 @property (nonatomic, readonly) NSString *screenName;
 
-- (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithName:(NSString *)name
+                  screenName:(NSString *)screenName
+                   biography:(NSString *)biography
+                 dateOfBirth:(NSDate *)dateOfBirth
+                 isNominated:(BOOL)isNominated;
 
 @end
