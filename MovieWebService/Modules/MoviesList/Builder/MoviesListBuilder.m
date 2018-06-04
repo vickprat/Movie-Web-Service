@@ -29,10 +29,7 @@
     presenter.interactor = interactor;
     viewController.output = presenter;
 
-    UINavigationController *navigationController = [UINavigationController new];
-    navigationController.viewControllers = @[viewController];
-
-    return navigationController;
+    return viewController;
 }
 
 @end
