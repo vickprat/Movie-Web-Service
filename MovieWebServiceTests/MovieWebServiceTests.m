@@ -2,11 +2,12 @@
 //  MovieWebServiceTests.m
 //  MovieWebServiceTests
 //
-//  Created by testDev on 4/11/17.
-//  Copyright © 2017 TestCompany. All rights reserved.
+//  Created by Prateek Khandelwal on 6/4/18.
+//  Copyright © 2018 TestCompany. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "MovieWebService.h"
 
 @interface MovieWebServiceTests : XCTestCase
 
@@ -14,26 +15,30 @@
 
 @implementation MovieWebServiceTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+- (void)testMovieWebService {
+  MovieWebService *webService = [MovieWebService new];
+  XCTestExpectation *expectation = [self expectationWithDescription:@"Film data not received"];
+  [webService getFilmDataWithCallback:^(NSDictionary *filmData) {
+    if (filmData != nil) {
+      [expectation fulfill];
+      [self testFilmData:filmData];
+    }
+  }];
+  [self waitForExpectationsWithTimeout:5 handler:nil];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testFilmData:(NSDictionary *)filmData {
+  XCTAssertNotNil(filmData[@"filmRating"]);
+  XCTAssertNotNil(filmData[@"languages"]);
+  XCTAssertNotNil(filmData[@"nominated"]);
+  XCTAssertNotNil(filmData[@"releaseDate"]);
+  XCTAssertNotNil(filmData[@"rating"]);
+  XCTAssertNotNil(filmData[@"name"]);
+  XCTAssertNotNil(filmData[@"director"]);
+  XCTAssertNotNil(filmData[@"director"][@"dateOfBirth"]);
+  XCTAssertNotNil(filmData[@"director"][@"nominated"]);
+  XCTAssertNotNil(filmData[@"director"][@"name"]);
+  XCTAssertNotNil(filmData[@"director"][@"biography"]);
 }
 
 @end
