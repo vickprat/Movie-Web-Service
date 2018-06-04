@@ -82,7 +82,6 @@
 		1CF463CEF7112C249D34D15F /* DetailsModuleBuilderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsModuleBuilderTests.swift; sourceTree = "<group>"; };
 		26433A0B06861EBAF23B96D3 /* DetailsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsViewInput.swift; sourceTree = "<group>"; };
 		3136C6286E9E6EB633A264C1 /* MoviesListViewControllerTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListViewControllerTests.m; sourceTree = "<group>"; };
-		35CD0B96AAC58C1A4D7EC3CE /* MoviesListModuleInput.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListModuleInput.h; sourceTree = "<group>"; };
 		38787514E6726FA46093D3D3 /* MoviesListRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MoviesListRouter.h; sourceTree = "<group>"; };
 		43D5E7435EFF0197EE769D38 /* Pods_MovieWebService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWebService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4436005FAD9733036C793E76 /* DetailsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailsInteractorOutput.swift; sourceTree = "<group>"; };
@@ -512,7 +511,6 @@
 		C572FD75E962291053D81A9C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				35CD0B96AAC58C1A4D7EC3CE /* MoviesListModuleInput.h */,
 				15A77123BE1C7D757A21CCDA /* MoviesListPresenter.h */,
 				DF2595CF7BC69741655A3A5D /* MoviesListPresenter.m */,
 			);
