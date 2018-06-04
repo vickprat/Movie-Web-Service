@@ -29,42 +29,32 @@ class DetailsViewController: UIViewController, DetailsViewInput, TappableLabelDe
     }
     
     func setupView() {
-        view = UIView()
-        self.title = "Movie Details";
+        self.title = "Movie Details"
         view.backgroundColor = .white
-        
-        directorName = UILabel()
-        view.addSubview(directorName)
-        directorName.frame = CGRect(x: 20, y: 100, width: 200, height: 30)
-        directorName.text = "Director Name"
-        
-        directorNameValue = UILabel()
-        view.addSubview(directorNameValue)
-        directorNameValue.frame = CGRect(x: 20, y: 130, width: 200, height: 30)
-        
-        showMore = TappableLabel()
-        view.addSubview(showMore)
-        showMore.frame = CGRect(x: 20, y: 180, width: 200, height: 30)
-        showMore.text = "Tap here to show more"
+        self.setupLabels();
+    }
+    
+    func setupLabels() {
+        directorName = createLabel(y: 100, text: "Director Name")
+        directorNameValue = createLabel(y: 130, text: nil)
+        showMore = createLabel(y: 180, text: "Tap to show more", shouldTap: true) as! TappableLabel
         showMore.delegate = self
-        
-        actorName = UILabel()
-        view.addSubview(actorName)
-        actorName.frame = CGRect(x: 20, y: 180, width: 200, height: 30)
-        actorName.text = "Actor Name"
-        
-        actorNameValue = UILabel()
-        view.addSubview(actorNameValue)
-        actorNameValue.frame = CGRect(x: 20, y: 210, width: 200, height: 30)
-        
-        actorScreenName = UILabel()
-        view.addSubview(actorScreenName)
-        actorScreenName.frame = CGRect(x: 20, y: 240, width: 200, height: 30)
-        actorScreenName.text = "Actor Screen Name"
-        
-        actorScreenNameValue = UILabel()
-        view.addSubview(actorScreenNameValue)
-        actorScreenNameValue.frame = CGRect(x: 20, y: 270, width: 200, height: 30)
+        actorName = createLabel(y: 180, text: "Actor Name")
+        actorNameValue = createLabel(y: 210, text: nil)
+        actorScreenName = createLabel(y: 240, text: "Actor Screen Name")
+        actorScreenNameValue = createLabel(y: 270, text: nil)
+    }
+    
+    func getFrame(with y: CGFloat) -> CGRect {
+        return CGRect(x: 20, y: y, width: 200, height: 30)
+    }
+    
+    func createLabel(y: CGFloat, text: String?, shouldTap: Bool = false) -> UILabel {
+        let frame = getFrame(with: y)
+        let label = shouldTap ? TappableLabel(frame: frame) : UILabel(frame: frame)
+        label.text = text
+        view.addSubview(label)
+        return label
     }
 
     // MARK: DetailsViewInput
