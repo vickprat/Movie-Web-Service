@@ -18,6 +18,7 @@
 		5423BA8C20C00E110089FA58 /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = 5423BA8B20C00E100089FA58 /* Screenshots */; };
 		54B7FA1020C55F370070D467 /* MovieWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FA0F20C55F370070D467 /* MovieWebService.m */; };
 		54B7FA1420C583FB0070D467 /* RootRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FA1320C583FB0070D467 /* RootRouter.m */; };
+		54B7FA1820C598B40070D467 /* MoviesListModuleBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B7FA1720C598B40070D467 /* MoviesListModuleBuilderTests.m */; };
 		5E41E215546810CF5B8975DB /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB9110561F8A83DB1F6046A /* DetailsInteractor.swift */; };
 		638D8069B664F59F50DFA783 /* MoviesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2595CF7BC69741655A3A5D /* MoviesListPresenter.m */; };
 		6597A49AD7CFA04B7C3014CF /* DetailsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436005FAD9733036C793E76 /* DetailsInteractorOutput.swift */; };
@@ -92,6 +93,7 @@
 		54B7FA0F20C55F370070D467 /* MovieWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieWebService.m; sourceTree = "<group>"; };
 		54B7FA1220C583FB0070D467 /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootRouter.h; path = MovieWebService/RootRouter.h; sourceTree = SOURCE_ROOT; };
 		54B7FA1320C583FB0070D467 /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootRouter.m; path = MovieWebService/RootRouter.m; sourceTree = SOURCE_ROOT; };
+		54B7FA1720C598B40070D467 /* MoviesListModuleBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesListModuleBuilderTests.m; sourceTree = "<group>"; };
 		570604DAB816B8F590CE6A19 /* Pods_MovieWebServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWebServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611BAE68F7CDC543F4FEBA97 /* Pods-MovieWebService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebService.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebService/Pods-MovieWebService.release.xcconfig"; sourceTree = "<group>"; };
 		64F90893C5DA4E92ACCFF053 /* MoviesListPresenterTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MoviesListPresenterTests.m; sourceTree = "<group>"; };
@@ -888,6 +890,7 @@
 				742C64031E9C750700B8E327 /* MovieWebServiceTests.m in Sources */,
 				2D83F1C19B23D02737F9607E /* MoviesListViewControllerTests.m in Sources */,
 				B1ECDB0D319AC25FF7CDE7A3 /* MoviesListPresenterTests.m in Sources */,
+				54B7FA1820C598B40070D467 /* MoviesListModuleBuilderTests.m in Sources */,
 				1DA435E4F744A94268F376F0 /* MoviesListInteractorTests.m in Sources */,
 				EC2947B31729FA900482C447 /* MoviesListRouterTests.m in Sources */,
 				E2172FD11664F9A934E6AFB4 /* DetailsModuleBuilderTests.swift in Sources */,
