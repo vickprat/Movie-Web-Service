@@ -93,6 +93,7 @@
 		54B7FA0F20C55F370070D467 /* MovieWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieWebService.m; sourceTree = "<group>"; };
 		54B7FA1220C583FB0070D467 /* RootRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootRouter.h; path = MovieWebService/RootRouter.h; sourceTree = SOURCE_ROOT; };
 		54B7FA1320C583FB0070D467 /* RootRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RootRouter.m; path = MovieWebService/RootRouter.m; sourceTree = SOURCE_ROOT; };
+		54B7FA1520C58C7A0070D467 /* MovieListTableViewCellInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieListTableViewCellInput.h; sourceTree = "<group>"; };
 		54B7FA1720C598B40070D467 /* MoviesListModuleBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesListModuleBuilderTests.m; sourceTree = "<group>"; };
 		570604DAB816B8F590CE6A19 /* Pods_MovieWebServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieWebServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611BAE68F7CDC543F4FEBA97 /* Pods-MovieWebService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieWebService.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieWebService/Pods-MovieWebService.release.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +398,7 @@
 		742C642F1E9C89E800B8E327 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				54B7FA1520C58C7A0070D467 /* MovieListTableViewCellInput.h */,
 				742C642A1E9C89E000B8E327 /* MovieListTableViewCell.h */,
 				742C642B1E9C89E000B8E327 /* MovieListTableViewCell.m */,
 				742C642C1E9C89E000B8E327 /* MovieListTableViewCell.xib */,

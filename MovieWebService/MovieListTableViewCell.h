@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class Film;
+@protocol MovieListTableViewCellInput;
 
 @interface MovieListTableViewCell : UITableViewCell
 
@@ -17,6 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *filmRating;
 @property (strong, nonatomic) IBOutlet UILabel *rating;
 
-- (void)setupForFilm:(Film *)film;
+- (void)setupWithDataProvider:(id<MovieListTableViewCellInput>)dataProvider;
 
 @end

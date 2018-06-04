@@ -7,30 +7,15 @@
 //
 
 #import "MovieListTableViewCell.h"
-#import "Film.h"
+#import "MovieListTableViewCellInput.h"
 
 @implementation MovieListTableViewCell
 
-- (void)setupForFilm:(Film *)film {
-  self.name.text = film.name;
-  NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-  [formatter setDateStyle:NSDateFormatterMediumStyle];
-  self.date.text = [formatter stringFromDate:film.releaseDate];
-  NSString *filmRatingText;
-  switch (film.filmRating) {
-    case G:
-      filmRatingText = @"G";
-    case PG:
-      filmRatingText = @"PG";
-    case PG13:
-      filmRatingText = @"PG13";
-    case R:
-      filmRatingText = @"R";
-    default:
-      break;
-  }
-  self.filmRating.text = filmRatingText;
-  self.rating.text = [[NSNumber numberWithDouble:film.rating] stringValue];
+- (void)setupWithDataProvider:(id<MovieListTableViewCellInput>)dataProvider {
+  self.name.text = dataProvider.filmName;
+  self.date.text = dataProvider.dateString;
+  self.filmRating.text = dataProvider.filmRating;
+  self.rating.text = dataProvider.rating;
 }
 
 @end

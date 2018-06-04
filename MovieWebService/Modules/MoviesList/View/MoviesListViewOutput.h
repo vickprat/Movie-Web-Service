@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Film.h"
+
+@protocol MovieListTableViewCellInput;
 
 @protocol MoviesListViewOutput <NSObject>
 
 - (void)viewIsReady;
 
-- (void)didSelectMovie:(Film *)film;
+- (void)didSelectFilmAtRow:(NSUInteger)row;
+
+- (id<MovieListTableViewCellInput>)dataProviderForRow:(NSUInteger)row;
+
+- (NSInteger)numberOfFilms;
 
 @end

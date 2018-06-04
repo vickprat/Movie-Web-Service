@@ -69,8 +69,7 @@ static NSString *CellIdentifier = @"MovieListTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Film *film = self.movies[indexPath.row];
-    [cell setupForFilm:film];
+    [cell setupWithDataProvider:[self.output dataProviderForRow:indexPath.row]];
     return cell;
 }
 
@@ -78,8 +77,7 @@ static NSString *CellIdentifier = @"MovieListTableViewCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    Film *film = self.movies[indexPath.row];
-    [self.output didSelectMovie:film];
+    [self.output didSelectFilmAtRow:indexPath.row];
 }
 
 @end
