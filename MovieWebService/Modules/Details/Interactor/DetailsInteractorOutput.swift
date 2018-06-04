@@ -9,5 +9,6 @@
 protocol DetailsInteractorOutput: class {
   
   func setDirector(with director: Director);
+  func setActor(with actor: Actor?);
 
 }

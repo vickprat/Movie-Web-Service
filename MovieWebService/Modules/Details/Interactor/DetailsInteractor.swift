@@ -14,5 +14,7 @@ class DetailsInteractor: DetailsInteractorInput {
     // MARK: - DetailsInteractorInput
     func getData() {
       self.output.setDirector(with: film.director)
+      let actor: Actor? = film.cast?[0]
+      self.output.setActor(with: actor)
     }
 }

@@ -23,7 +23,10 @@ class DetailsPresenter: DetailsModuleInput, DetailsViewOutput, DetailsInteractor
     
     // MARK: - DetailsInteractorOutput
     func setDirector(with director: Director) {
-      let actor: Actor? = director.film.cast?[0]
-      self.view.fillData(with: director.name, actorName: actor?.name, actorScreenName: actor?.screenName)
+      self.view.setupDirectorLabel(with: director.name)
+    }
+
+    func setActor(with actor: Actor?) {
+      self.view.setupActorLabel(with: actor?.name, actorScreenName: actor?.screenName)
     }
 }

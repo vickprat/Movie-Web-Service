@@ -8,7 +8,9 @@
 
 protocol DetailsViewInput: class {
   
-  func fillData(with directorName: String, actorName: String?, actorScreenName: String?)
+  func setupDirectorLabel(with directorName: String)
+  
+  func setupActorLabel(with actorName: String?, actorScreenName: String?)
   
   func showMore(isHidden: Bool);
   
