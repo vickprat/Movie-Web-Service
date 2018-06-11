@@ -2,8 +2,8 @@
 //  GenericRole.h
 //  MovieWebService
 //
-//  Created by testDev on 4/11/17.
-//  Copyright © 2017 TestCompany. All rights reserved.
+//  Created by Prateek Khandelwal on 6/4/18.
+//  Copyright © 2017 Talk.to FZC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,8 +12,8 @@
 
 @interface GenericRole : NSObject
 
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *biography;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *biography;
 @property (nonatomic, readonly) NSDate *dateOfBirth;
 @property (nonatomic, readonly, getter=isNominated) BOOL nominated;
 @property (nonatomic, weak) Film *film;

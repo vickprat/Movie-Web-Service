@@ -2,8 +2,8 @@
 //  MoviesListInteractorInput.h
 //  MovieWebService
 //
-//  Created by testDev on 11/04/2017.
-//  Copyright © 2017 Agoda Services Co. Ltd. All rights reserved.
+//  Created by Prateek Khandelwal on 6/4/18.
+//  Copyright © 2017 Talk.to FZC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
