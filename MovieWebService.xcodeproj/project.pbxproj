@@ -1041,7 +1041,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieWebService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebService;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MovieWebService/Supporting Files/Movie-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1055,7 +1055,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieWebService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebService;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MovieWebService/Supporting Files/Movie-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -1069,7 +1069,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MovieWebServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieWebService.app/MovieWebService";
@@ -1083,7 +1083,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MovieWebServiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieWebService.app/MovieWebService";
@@ -1096,7 +1096,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = MovieWebServiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebServiceUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MovieWebService;
 			};
@@ -1108,7 +1108,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = MovieWebServiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = agodatest.MovieWebServiceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = viperTest.MovieWebServiceUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MovieWebService;
 			};
